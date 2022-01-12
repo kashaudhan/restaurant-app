@@ -1,21 +1,40 @@
-import React from 'react'
-import { View, Text, StyleSheet } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import React from "react";
+import { View, Text, TextInput, StyleSheet } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
-export default function SearchBar() {
+export default function SearchBar({ term, onTermChange, onTermSubmit }) {
   return (
-    <View style={styles.background}>
-      <Text>Search 
-           Bar</Text>
+    <View style={styles.backgroundStyle}>
+      <Feather name="search" style={styles.iconStyle} />
+      <TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        style={styles.inputStyle}
+        placeholder="Search"
+        onChangeText={onTermChange}
+        value={term}
+        onEndEditing={onTermSubmit}
+      />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: '#F0EEEE',
+  backgroundStyle: {
+    backgroundColor: "#e3e3e3",
     height: 50,
     borderRadius: 8,
     marginHorizontal: 15,
-  }
-})
+    marginTop: 15,
+    flexDirection: "row",
+  },
+  inputStyle: {
+    flex: 1,
+    fontSize: 18,
+  },
+  iconStyle: {
+    fontSize: 35,
+    alignSelf: "center",
+    marginHorizontal: 15,
+  },
+});
