@@ -5,7 +5,8 @@ import { Feather } from '@expo/vector-icons';
 export default function SearchBar() {
   return (
     <View style={styles.background}>
-      <Text>Search Bar</Text>
+      <Text>Search 
+           Bar</Text>
     </View>
   )
 }
