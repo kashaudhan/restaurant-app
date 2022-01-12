@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
 import ResultsList from "../components/ResultsList";
 
-export default function SearchScreen() {
+export default function SearchScreen({ navigation }) {
   const [term, setTerm] = useState("");
   const [searchApi, isLoading, results, errorMessage] = useResults();
 
@@ -29,9 +29,18 @@ export default function SearchScreen() {
         <ResultsList
           results={filterResultsByPrice("$")}
           title="Cost Effective"
+          navigation={navigation}
         />
-        <ResultsList results={filterResultsByPrice("$$")} title="Bit Pricier" />
-        <ResultsList results={filterResultsByPrice("$$$")} title="Premium" />
+        <ResultsList
+          results={filterResultsByPrice("$$")}
+          title="Bit Pricier"
+          navigation={navigation}
+        />
+        <ResultsList
+          results={filterResultsByPrice("$$$")}
+          title="Premium"
+          navigation={navigation}
+        />
       </ScrollView>
     </>
   );
