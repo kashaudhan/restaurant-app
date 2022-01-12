@@ -7,11 +7,11 @@ const navigator = createStackNavigator(
     Search: SearchScreen,
   },
   {
-    initialRouteName: 'Search',
+    initialRouteName: "Search",
     defaultNavigationOptions: {
-      title: 'Business Search'
-    }
+      title: "Business Search",
+    },
   }
 );
 
-export default createAppContainer(navigator)
+export default createAppContainer(navigator);
